@@ -6,37 +6,26 @@ import java.util.UUID;
 
 @Entity
 public class Boleto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-
     // Using UUID just for proof of concept
     @Column(unique = true)
-    String code = UUID.randomUUID().toString();
-
+    private final String code = UUID.randomUUID().toString();
     // Setting for every
     // new boleto to 3 days ahead
-    LocalDate expireDate = LocalDate.now().plusDays(3);
-
+    private final LocalDate expireDate = LocalDate.now().plusDays(3);
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column(unique = true)
-    Long carId;
+    private Long carId;
 
-    String carBrand;
+    private String carBrand;
 
-    String carModel;
+    private String carModel;
 
-    Float carPrice;
+    private Float carPrice;
 
     public Long getId() {
         return id;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public LocalDate getExpireDate() {
-        return expireDate;
     }
 
     public Long getCarId() {
@@ -47,11 +36,23 @@ public class Boleto {
         return carBrand;
     }
 
+    public void setCarBrand(String carBrand) {
+        this.carBrand = carBrand;
+    }
+
     public String getCarModel() {
         return carModel;
     }
 
+    public void setCarModel(String carModel) {
+        this.carModel = carModel;
+    }
+
     public Float getCarPrice() {
         return carPrice;
+    }
+
+    public void setCarPrice(Float carPrice) {
+        this.carPrice = carPrice;
     }
 }
