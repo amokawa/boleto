@@ -1,6 +1,6 @@
 # boleto
 
-Desafio Itaú para criação de serviço de boleto
+Desafio Itaú para criação de serviço de boleto.
 
 ## Requisitos
 
@@ -23,21 +23,19 @@ Desafio Itaú para criação de serviço de boleto
 ### Chamada do método "/boleto"
 
 * Requisição:
-
-```text
-curl --location --request POST 'localhost:8080/boleto/boleto' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "carId":7
-}'
-```
+  ```text
+  curl --location --request POST 'localhost:8080/boleto/boleto' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+      "carId":7
+  }'
+  ```
 
 * Resposta:
-
-```json
-{
-  "expireDate": "2021-02-10",
-  "total": 70900.0,
-  "code": "6d8a5925-2ed3-4b98-9e51-5f68dd688f3b"
-}
-```
+  ```json
+  {
+    "expireDate": "2021-02-10",
+    "total": 70900.0,
+    "code": "6d8a5925-2ed3-4b98-9e51-5f68dd688f3b"
+  }
+  ```
